@@ -4,10 +4,10 @@ var dbjfake = {
         {
             "id": 1,
             "nome": "Tetris",
-            "release": "June 6, 1984",
+            "release": "06-06-1984",
             "developer": "Various*",
             "platform": "PC",
-            "genre": "Puzzle",
+            "genre": "Family/Puzzle",
             "gamemode": "Single-Player",
             "cover": "img/Tetris.jpg"
 
@@ -15,9 +15,9 @@ var dbjfake = {
         {
             "id": 2,
             "nome": "Super Mario Bros",
-            "release": "September 13, 1985",
+            "release": "13-09-1985",
             "developer": "Nintendo",
-            "platform": "SNES",
+            "platform": "Nintendo",
             "genre": "Platformer",
             "gamemode": "Single-Player",
             "cover": "img/Mario.png"
@@ -25,30 +25,30 @@ var dbjfake = {
         {
             "id": 3,
             "nome": "Half-Life",
-            "release": "Novembro 19, 1998",
+            "release": "19-11-1998",
             "developer": "Valve",
             "platform": "PC",
-            "genre": "FPS",
+            "genre": "Shooter",
             "gamemode": "Single-Player",
             "cover": "img/HalfLife.jpg"
         },
         {
             "id": 4,
             "nome": "Zelda",
-            "release": "November 21, 1991",
+            "release": "21-11-1991",
             "developer": "Nintendo",
-            "platform": "SNES",
-            "genre": "Action-adventure",
+            "platform": "Nintendo",
+            "genre": "Action/adventure",
             "gamemode": "Single-Player",
             "cover": "img/Zelda.jpg"
         },
         {
             "id": 5,
             "nome": "Grand Theft Auto",
-            "release": "October 21, 1997",
+            "release": "21-10-1997",
             "developer": "Rockstar",
             "platform": "PC",
-            "genre": "Action-adventure",
+            "genre": "Action/adventure",
             "gamemode": "Single-Player",
             "cover": "img/GTA.jpg"
         }

@@ -37,7 +37,7 @@
             <div class="form-group row">
                 <div class="col-sm-7">
                     <label for="inputRelease">Release (*)</label>
-                    <input type="text" class="form-control" id="inputRelease" required placeholder="Data de lançamento">
+                    <input type="date" class="form-control" id="inputRelease" required placeholder="Data de lançamento">
                 </div>
                 <div class="col-sm-5">
                     <label for="inputDeveloper">Developer (*)</label>
@@ -45,18 +45,43 @@
                 </div>
                 <div class="col-sm-4">
                     <label for="inputPlatform">Platform (*)</label>
-                    <input type="text" class="form-control" id="inputPlatform" required placeholder="Plataforma">
+                    <select class="form-control" id="inputPlatform">
+                        <option>PC</option>
+                        <option>Xbox</option>
+                        <option>PlayStation</option>
+                        <option>Nintendo</option>
+                    </select>
+                    <!--<input type="text" class="form-control" id="inputPlatform" required placeholder="Plataforma">-->
                 </div>
                 <div class="col-sm-4">
-                    <label for="inputPlatform">Genre (*)</label>
-                    <input type="text" class="form-control" id="inputGenre" required placeholder="Genero do jogo">
+                    <label for="inputGenre">Genre (*)</label>
+                    <select class="form-control" id="inputGenre">
+                        <option>Action/adventure</option>
+                        <option>Family/Puzzle</option>
+                        <option>Platformer</option>
+                        <option>RPG</option>
+                        <option>Fighting</option>
+                        <option>Shooter</option>
+                        <option>Survival</option>
+                        <option>Strategy</option>
+                        <option>Music</option>
+                        <option>Sports</option>
+                        <option>Driving</option>
+                        <option>Simulation</option>
+                    </select>
+                    <!--<input type="text" class="form-control" id="inputGenre" required placeholder="Genero do jogo">-->
                 </div>
                 <div class="col-sm-4">
-                    <label for="inputPlatform">Gamemode (*)</label>
-                    <input type="text" class="form-control" id="inputGamemode" required placeholder="Gamemode">
+                    <label for="inputGamemode">Gamemode (*)</label>
+                    <select class="form-control" id="inputGamemode">
+                        <option>Single-Player</option>
+                        <option>Multiplayer</option>
+                    </select>
+                    <!--<input type="text" class="form-control" id="inputGamemode" required placeholder="Gamemode">-->
+
                 </div>
                 <div class="col-sm-12">
-                    <label for="inputPlatform">Cover (*)</label>
+                    <label for="inputCover">Cover (*)</label>
                     <input type="text" class="form-control" id="inputCover" required placeholder="Insira o link da capa">
                 </div>
             </div>
@@ -71,7 +96,7 @@
                     <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
                     <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
                     <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
-                    <input type="button" class="btn btn-secondary" id="btnClearStorage" value="Limpar Local Storage">
+                    <input type="button" class="btn-xs btn-info float-right" id="btnClearStorage" value="Reset LocalStorage">
                 </div>
             </div>
         </form>
