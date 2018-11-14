@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TrabalhoFinal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/fakedb.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body onload="init()">
+    <h1>Lista de jogos TESTE</h1>
+
+    <div class="container">
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+            </div>
+        </div>
+
+        <form id="form-jogo">
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="inputId">Id</label>
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                </div>
+                <div class="col-sm-8">
+                    <label for="inputNome">Nome (*)</label>
+                    <input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do jogo">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-7">
+                    <label for="inputRelease">Release (*)</label>
+                    <input type="text" class="form-control" id="inputRelease" required placeholder="Data de lançamento">
+                </div>
+                <div class="col-sm-5">
+                    <label for="inputDeveloper">Developer (*)</label>
+                    <input type="text" class="form-control" id="inputDeveloper" required placeholder="Informe o nome do desenvolvedor">
+                </div>
+                <div class="col-sm-4">
+                    <label for="inputPlatform">Platform (*)</label>
+                    <input type="text" class="form-control" id="inputPlatform" required placeholder="Plataforma">
+                </div>
+                <div class="col-sm-4">
+                    <label for="inputPlatform">Genre (*)</label>
+                    <input type="text" class="form-control" id="inputGenre" required placeholder="Genero do jogo">
+                </div>
+                <div class="col-sm-4">
+                    <label for="inputPlatform">Gamemode (*)</label>
+                    <input type="text" class="form-control" id="inputGamemode" required placeholder="Gamemode">
+                </div>
+                <div class="col-sm-12">
+                    <label for="inputPlatform">Cover (*)</label>
+                    <input type="text" class="form-control" id="inputCover" required placeholder="Insira o link da capa">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <small>(*) Campos obrigatórios</small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                    <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                    <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+                    <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
+                    <input type="button" class="btn btn-secondary" id="btnClearStorage" value="Limpar Local Storage">
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="grid-jogos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Release</th>
+                            <th scope="col">Developer</th>
+                            <th scope="col">Platform</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">Gamemode</th>
+                            <th scope="col">Cover</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-jogos">
+                        <tr>
+                            <td scope="row">1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
