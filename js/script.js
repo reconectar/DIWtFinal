@@ -29,7 +29,7 @@ function insertJogo(jogo) {
     displayMessage("Jogo inserido com sucesso");
 
     // Atualiza os dados no Local Storage
-    localStorage.setItem('db', JSON.stringify(dbj));
+    localStorage.setItem('dbj', JSON.stringify(dbj));
 }
 
 function updateJogo(id, jogo) {
@@ -48,7 +48,7 @@ function updateJogo(id, jogo) {
     displayMessage("Jogo alterado com sucesso");
 
     // Atualiza os dados no Local Storage
-    localStorage.setItem('db', JSON.stringify(dbj));
+    localStorage.setItem('dbj', JSON.stringify(dbj));
 }
 
 function deleteJogo(id) {
@@ -71,7 +71,7 @@ function exibeJogos() {
     // Popula a tabela com os registros do banco de dados
     for (i = 0; i < dbj.data.length; i++) {
         let jogo = dbj.data[i];
-        $("#table-jogos").append(`<tr><td scope="row">${jogo.id}</td><td>${jogo.nome}</td><td>${jogo.release}</td><td>${jogo.developer}</td><td>${jogo.platform}</td><td>${jogo.genre}</td><td>${jogo.gamemode}</td><td>${jogo.cover}</td></tr>`);
+        $("#table-jogos").append(`<tr><td scope="row">${jogo.id}</td><td>${jogo.nome}</td><td>${jogo.release}</td><td>${jogo.developer}</td><td>${jogo.platform}</td><td>${jogo.genre}</td><td>${jogo.gamemode}</td><td><img src="${jogo.cover}"></td></tr>`);
     }
 }
 

@@ -66,3 +66,9 @@
  #grid-contatos tbody {
      cursor: pointer;
  }
+
+ #table-jogos img {
+     height: 100%;
+     width: auto;
+     max-height: 156px;
+ }
