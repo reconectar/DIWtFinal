@@ -1,74 +1,77 @@
- /* Remove the navbar's default margin-bottom and rounded borders */
- .navbar {
-     margin-bottom: 0;
-     border-radius: 0;
- }
+/* Remove the navbar's default margin-bottom and rounded borders */
 
- /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
- .row.content {
-     height: 450px
- }
+/*1.0*/
 
- /* Set gray background color and 100% height */
- .sidenav {
-     padding-top: 20px;
-     background-color: #f1f1f1;
-     height: 100%;
- }
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
 
- /* Set black background color, white text and some padding */
- footer {
-     background-color: #555;
-     color: white;
-     padding: 15px;
- }
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 450px
+}
 
- /* On small screens, set height to 'auto' for sidenav and grid */
- @media screen and (max-width: 767px) {
-     .sidenav {
-         height: auto;
-         padding: 15px;
-     }
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
 
-     .row.content {
-         height: auto;
-     }
- }
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
 
- label {
-     font-weight: bolder;
- }
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
 
- ::placeholder {
-     color: gray !important;
-     opacity: 3;
- }
+    .row.content {
+        height: auto;
+    }
+}
 
- ::-webkit-input-placeholder {
-     /* WebKit, Blink, Edge */
-     color: gray !important;
- }
+label {
+    font-weight: bolder;
+}
 
- :-moz-placeholder {
-     /* Mozilla Firefox 4 to 18 */
-     color: gray !important;
-     opacity: 3;
- }
+::placeholder {
+    color: gray !important;
+    opacity: 3;
+}
 
- h1 {
-     text-align: center;
- }
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: gray !important;
+}
 
- #msg {
-     height: 60px;
- }
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: gray !important;
+    opacity: 3;
+}
 
- #grid-contatos tbody {
-     cursor: pointer;
- }
+h1 {
+    text-align: center;
+}
 
- #table-jogos img {
-     height: 100%;
-     width: auto;
-     max-height: 156px;
- }
+#msg {
+    height: 60px;
+}
+
+#grid-contatos tbody {
+    cursor: pointer;
+}
+
+#table-jogos img {
+    height: 100%;
+    width: auto;
+    max-height: 156px;
+}

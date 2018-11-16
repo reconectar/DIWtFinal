@@ -1,3 +1,5 @@
+/* 1.0*/
+
 // declara um conjunto fake de dados para jogos
 var dbjfake = {
     "data": [

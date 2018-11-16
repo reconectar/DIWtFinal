@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<!-- 1.0 -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,26 +27,26 @@
 
         <form id="form-jogo">
             <div class="form-group row">
-                <div class="col-sm-4">
+                <div class="col-sm-1">
                     <label for="inputId">Id</label>
                     <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
                 </div>
-                <div class="col-sm-8">
-                    <label for="inputNome">Nome (*)</label>
+                <div class="col-sm-11">
+                    <label for="inputNome">Nome *</label>
                     <input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do jogo">
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-7">
-                    <label for="inputRelease">Release (*)</label>
+                <div class="col-sm-3">
+                    <label for="inputRelease">Release *</label>
                     <input type="date" class="form-control" id="inputRelease" required placeholder="Data de lançamento">
                 </div>
-                <div class="col-sm-5">
-                    <label for="inputDeveloper">Developer (*)</label>
+                <div class="col-sm-9">
+                    <label for="inputDeveloper">Developer *</label>
                     <input type="text" class="form-control" id="inputDeveloper" required placeholder="Informe o nome do desenvolvedor">
                 </div>
                 <div class="col-sm-4">
-                    <label for="inputPlatform">Platform (*)</label>
+                    <label for="inputPlatform">Platform *</label>
                     <select class="form-control" id="inputPlatform">
                         <option>PC</option>
                         <option>Xbox</option>
@@ -69,25 +71,25 @@
                         <option>Driving</option>
                         <option>Simulation</option>
                     </select>
-                    <!--<input type="text" class="form-control" id="inputGenre" required placeholder="Genero do jogo">-->
+                    <!-- codigo antigo <input type="text" class="form-control" id="inputGenre" required placeholder="Genero do jogo">-->
                 </div>
                 <div class="col-sm-4">
-                    <label for="inputGamemode">Gamemode (*)</label>
+                    <label for="inputGamemode">Gamemode *</label>
                     <select class="form-control" id="inputGamemode">
                         <option>Single-Player</option>
                         <option>Multiplayer</option>
                     </select>
-                    <!--<input type="text" class="form-control" id="inputGamemode" required placeholder="Gamemode">-->
+                    <!-- codigo antigo <input type="text" class="form-control" id="inputGamemode" required placeholder="Gamemode">-->
 
                 </div>
                 <div class="col-sm-12">
-                    <label for="inputCover">Cover (*)</label>
+                    <label for="inputCover">Cover *</label>
                     <input type="text" class="form-control" id="inputCover" required placeholder="Insira o link da capa">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-4">
-                    <small>(*) Campos obrigatórios</small>
+                    <small>* Campos obrigatórios</small>
                 </div>
             </div>
             <div class="form-group row">

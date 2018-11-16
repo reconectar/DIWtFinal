@@ -1,3 +1,5 @@
+/* 1.0 */
+
 // Caso exista no Local Storage, recupera os dados salvos
 var dbj = JSON.parse(localStorage.getItem('dbj'));
 if (!dbj) {
