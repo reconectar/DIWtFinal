@@ -17,105 +17,167 @@
 
 <body onload="init()">
     <h1>Lista de jogos TESTE</h1>
+    <!-- Trigger/Open The Modal -->
+    <div class="row justify-content-center homeBtns">
+        <button class="btn btn-success align-self-center" id="openBtn" onclick="openModal()">Inserir novo</button>
+    </div>
+    <div class="row">
+        <div id="msg" class="col-sm-10 offset-sm-1 ">
+            <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <form id="form-jogo">
+                <div class="form-group row">
+                    <div class="col-sm-1">
+                        <label for="inputId">Id</label>
+                        <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                    </div>
+                    <div class="col-sm-11">
+                        <label for="inputNome">Nome *</label>
+                        <input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do jogo">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <label for="inputRelease">Release *</label>
+                        <input type="text" class="form-control" id="inputRelease" required placeholder="Data de lançamento (yyyy-mm-dd)">
+                    </div>
+                    <div class="col-sm-8">
+                        <label for="inputDeveloper">Developer *</label>
+                        <input type="text" class="form-control" id="inputDeveloper" required placeholder="Informe o nome do desenvolvedor">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="inputPlatform">Platform *</label>
+                        <select class="form-control" id="inputPlatform">
+                            <option>PC</option>
+                            <option>Xbox</option>
+                            <option>PlayStation</option>
+                            <option>Nintendo</option>
+                        </select>
+                        <!--<input type="text" class="form-control" id="inputPlatform" required placeholder="Plataforma">-->
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="inputGenre">Genre *</label>
+                        <select class="form-control" id="inputGenre">
+                            <option value="Action/adventure">Action/adventure</option>
+                            <option value="Family/Puzzle">Family/Puzzle</option>
+                            <option value="Platformer">Platformer</option>
+                            <option value="RPG">RPG</option>
+                            <option value="Fighting">Fighting</option>
+                            <option value="Shooter">Shooter</option>
+                            <option value="Survival">Survival</option>
+                            <option value="Strategy">Strategy</option>
+                            <option value="Music">Music</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Driving">Driving</option>
+                            <option value="Simulation">Simulation</option>
+                        </select>
+                        <!-- codigo antigo <input type="text" class="form-control" id="inputGenre" required placeholder="Genero do jogo">-->
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="inputGamemode">Gamemode *</label>
+                        <select class="form-control" id="inputGamemode">
+                            <option value="Single-Player">Single-Player</option>
+                            <option value="Multiplayer">Multiplayer</option>
+                        </select>
+                        <!-- codigo antigo <input type="text" class="form-control" id="inputGamemode" required placeholder="Gamemode">-->
+
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="inputCover">Cover *</label>
+                        <input type="text" class="form-control" id="inputCover" required placeholder="Insira o link da capa">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <small>* Campos obrigatórios</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                        <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                        <!--<input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">-->
+                        <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
+                        <input type="button" class="btn-xs btn-info float-right" id="btnClearStorage" value="Reset LocalStorage">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Get the modal 1
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var goBtn = document.getElementById("openBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+
+        function openModal() {
+            modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        function hideBtnInsert() {
+            $("#btnInsert").addClass("d-none");
+            $("#btnInsert").removeClass("d-inline");
+        }
+
+        function showBtnInsert() {
+            $("#btnInsert").addClass("d-inline");
+            $("#btnInsert").removeClass("d-none");
+        }
+
+        function hideBtnUpdate() {
+            $("#btnUpdate").addClass("d-none");
+            $("#btnUpdate").removeClass("d-inline");
+
+        }
+
+        function showBtnUpdate() {
+            $("#btnUpdate").addClass("d-inline");
+            $("#btnUpdate").removeClass("d-none");
+        }
+    </script>
 
     <div class="container">
-        <div class="row">
-            <div id="msg" class="col-sm-10 offset-sm-1 ">
-                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
-            </div>
-        </div>
-
-        <form id="form-jogo">
-            <div class="form-group row">
-                <div class="col-sm-1">
-                    <label for="inputId">Id</label>
-                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
-                </div>
-                <div class="col-sm-11">
-                    <label for="inputNome">Nome *</label>
-                    <input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do jogo">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-3">
-                    <label for="inputRelease">Release *</label>
-                    <input type="date" class="form-control" id="inputRelease" required placeholder="Data de lançamento">
-                </div>
-                <div class="col-sm-9">
-                    <label for="inputDeveloper">Developer *</label>
-                    <input type="text" class="form-control" id="inputDeveloper" required placeholder="Informe o nome do desenvolvedor">
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputPlatform">Platform *</label>
-                    <select class="form-control" id="inputPlatform">
-                        <option>PC</option>
-                        <option>Xbox</option>
-                        <option>PlayStation</option>
-                        <option>Nintendo</option>
-                    </select>
-                    <!--<input type="text" class="form-control" id="inputPlatform" required placeholder="Plataforma">-->
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputGenre">Genre (*)</label>
-                    <select class="form-control" id="inputGenre">
-                        <option>Action/adventure</option>
-                        <option>Family/Puzzle</option>
-                        <option>Platformer</option>
-                        <option>RPG</option>
-                        <option>Fighting</option>
-                        <option>Shooter</option>
-                        <option>Survival</option>
-                        <option>Strategy</option>
-                        <option>Music</option>
-                        <option>Sports</option>
-                        <option>Driving</option>
-                        <option>Simulation</option>
-                    </select>
-                    <!-- codigo antigo <input type="text" class="form-control" id="inputGenre" required placeholder="Genero do jogo">-->
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputGamemode">Gamemode *</label>
-                    <select class="form-control" id="inputGamemode">
-                        <option>Single-Player</option>
-                        <option>Multiplayer</option>
-                    </select>
-                    <!-- codigo antigo <input type="text" class="form-control" id="inputGamemode" required placeholder="Gamemode">-->
-
-                </div>
-                <div class="col-sm-12">
-                    <label for="inputCover">Cover *</label>
-                    <input type="text" class="form-control" id="inputCover" required placeholder="Insira o link da capa">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-4">
-                    <small>* Campos obrigatórios</small>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-12">
-                    <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
-                    <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
-                    <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
-                    <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
-                    <input type="button" class="btn-xs btn-info float-right" id="btnClearStorage" value="Reset LocalStorage">
-                </div>
-            </div>
-        </form>
 
         <div class="row">
             <div class="col-sm-12">
                 <table id="grid-jogos" class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col" hidden>#</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Release</th>
-                            <th scope="col">Developer</th>
-                            <th scope="col">Platform</th>
+                            <th scope="col" hidden>Release</th>
+                            <th scope="col" hidden>Developer</th>
                             <th scope="col">Genre</th>
-                            <th scope="col">Gamemode</th>
+                            <th scope="col" hidden>Gamemode</th>
                             <th scope="col">Cover</th>
+                            <th scope="col">Operações</th>
                         </tr>
                     </thead>
                     <tbody id="table-jogos">

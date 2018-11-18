@@ -17,7 +17,7 @@ var dbjfake = {
         {
             "id": 2,
             "nome": "Super Mario Bros",
-            "release": "13-09-1985",
+            "release": "1985-09-13",
             "developer": "Nintendo",
             "platform": "Nintendo",
             "genre": "Platformer",
@@ -27,7 +27,7 @@ var dbjfake = {
         {
             "id": 3,
             "nome": "Half-Life",
-            "release": "19-11-1998",
+            "release": "1998-11-19",
             "developer": "Valve",
             "platform": "PC",
             "genre": "Shooter",
@@ -37,7 +37,7 @@ var dbjfake = {
         {
             "id": 4,
             "nome": "Zelda",
-            "release": "21-11-1991",
+            "release": "1991-11-21",
             "developer": "Nintendo",
             "platform": "Nintendo",
             "genre": "Action/adventure",
@@ -47,7 +47,7 @@ var dbjfake = {
         {
             "id": 5,
             "nome": "Grand Theft Auto",
-            "release": "21-10-1997",
+            "release": "1997-10-21",
             "developer": "Rockstar",
             "platform": "PC",
             "genre": "Action/adventure",

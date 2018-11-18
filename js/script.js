@@ -1,5 +1,7 @@
 /* 1.0 */
 
+
+
 // Caso exista no Local Storage, recupera os dados salvos
 var dbj = JSON.parse(localStorage.getItem('dbj'));
 if (!dbj) {
@@ -63,6 +65,12 @@ function deleteJogo(id) {
 
     // Atualiza os dados no Local Storage
     localStorage.setItem('dbj', JSON.stringify(dbj));
+
+    // Reexibe os jogos
+    exibeJogos();
+
+    // Limpa o formulario
+    $("#form-jogo")[0].reset();
 }
 
 
@@ -73,11 +81,13 @@ function exibeJogos() {
     // Popula a tabela com os registros do banco de dados
     for (i = 0; i < dbj.data.length; i++) {
         let jogo = dbj.data[i];
-        $("#table-jogos").append(`<tr><td scope="row">${jogo.id}</td><td>${jogo.nome}</td><td>${jogo.release}</td><td>${jogo.developer}</td><td>${jogo.platform}</td><td>${jogo.genre}</td><td>${jogo.gamemode}</td><td><img src="${jogo.cover}"></td></tr>`);
+        $("#table-jogos").append(`<tr><td scope="row" hidden>${jogo.id}</td><td>${jogo.nome}</td><td hidden>${jogo.release}</td><td hidden>${jogo.developer}</td><td hidden>${jogo.platform}</td><td>${jogo.genre}</td><td hidden>${jogo.gamemode}</td><td><img src="${jogo.cover}"></td><td><a href="#" onclick="openModal2()">Visualizar</a> | <a href="#" onclick="openModal()">Alterar</a> | <a onclick="deleteJogo(${jogo.id})" value="Excluir" href="#" id="btnDelete">Excluir</a></td></tr>`);
     }
 }
 
 function init() {
+
+
     // Adiciona funções para tratar os eventos 
     $("#btnInsert").click(function () {
         // Verfica se o formulário está preenchido corretamente
@@ -108,6 +118,9 @@ function init() {
 
         // Reexibe os jogos
         exibeJogos();
+
+        // Fecha o modal para visualização da mensagem
+        closeModal();
 
         // Limpa o formulario
         $("#form-jogo")[0].reset();
@@ -145,9 +158,12 @@ function init() {
 
         // Limpa o formulario
         $("#form-jogo")[0].reset();
+
+        // Fecha o modal para visualização da mensagem
+        closeModal();
     });
 
-    // Intercepta o click do botão Excluir
+    /*// Intercepta o click do botão Excluir
     $("#btnDelete").click(function () {
         let campoId = $("#inputId").val();
         if (campoId == "") {
@@ -161,15 +177,23 @@ function init() {
 
         // Limpa o formulario
         $("#form-jogo")[0].reset();
-    });
+    });*/
 
-    // Intercepta o click do botão Listar Jogos
+    // Intercepta o click do botão limpar formulário
     $("#btnClear").click(function () {
         $("#form-jogo")[0].reset();
     });
 
+    $("#openBtn").click(function () {
+        $("#form-jogo")[0].reset();
+        showBtnInsert();
+        hideBtnUpdate();
+    });
+
+    // Intercepta o click do botâo resetar LocalStorage
     $("#btnClearStorage").click(function () {
         window.localStorage.removeItem('dbj');
+        location.reload();
     });
 
     // Oculta a mensagem de aviso após alguns segundos
@@ -178,7 +202,7 @@ function init() {
             $(".alert").fadeTo(500, 0).slideUp(500, function () {
                 $(this).remove();
             });
-        }, 5000);
+        }, 2000);
     });
 
     // Preenche o formulário quando o usuario clicar em uma linha da tabela 
@@ -192,6 +216,8 @@ function init() {
         $("#inputGenre").val(linhaJogo.childNodes[5].firstChild.nodeValue);
         $("#inputGamemode").val(linhaJogo.childNodes[6].firstChild.nodeValue);
         $("#inputCover").val(linhaJogo.childNodes[7].firstChild.nodeValue);
+        hideBtnInsert();
+        showBtnUpdate();
     });
 
     exibeJogos();
