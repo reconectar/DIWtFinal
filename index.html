@@ -16,7 +16,7 @@
 </head>
 
 <body onload="init()">
-    <h1>Lista de jogos TESTE</h1>
+    <h1>Lista de jogos</h1>
     <!-- Trigger/Open The Modal -->
     <div class="row justify-content-center homeBtns">
         <button class="btn btn-success align-self-center" id="openBtn" onclick="openModal()">Inserir novo</button>
@@ -144,11 +144,15 @@
         function hideBtnInsert() {
             $("#btnInsert").addClass("d-none");
             $("#btnInsert").removeClass("d-inline");
+            $("#btnClear").addClass("d-none");
+            $("#btnClear").removeClass("d-inline");
         }
 
         function showBtnInsert() {
             $("#btnInsert").addClass("d-inline");
             $("#btnInsert").removeClass("d-none");
+            $("#btnClear").addClass("d-inline");
+            $("#btnClear").removeClass("d-none");
         }
 
         function hideBtnUpdate() {
@@ -165,6 +169,64 @@
 
     <div class="container">
 
+
+
+
+
+        <!-- The Modal2 -->
+        <div id="myModal2" class="modal2">
+
+            <!-- Modal content -->
+            <div class="modal2-content">
+                <span class="close2" onclick="closeModal2()">&times;</span>
+                <h1>Visualização Individual</h1>
+                <div id="jogoSolo">
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Get the modal 2
+            var modal2 = document.getElementById('myModal2');
+
+            // Get the <span> element that closes the modal
+            var span2 = document.getElementsByClassName("close2")[0];
+
+            // When the user clicks on the button, open the modal
+
+            function openModal2(id) {
+                modal2.style.display = "block";
+                // Remove todas as linhas do corpo do modal 2
+                $("#jogoSolo").html("");
+                let idInt = id - 1;
+                console.log("id =", id);
+                console.log("idInt =", idInt);
+                // Popula o modal com os registros do banco de dados
+                let jogo = dbj.data[idInt];
+                $("#jogoSolo").append(`<img src="${jogo.cover}">`);
+                $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space1">Nome</span>${jogo.nome}<br>`);
+                $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space2">Data de lançamento</span>${jogo.release}<br>`);
+                $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space3">Desenvolvedor</span>${jogo.developer}<br>`);
+                $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space4">Plataforma</span>${jogo.platform}<br>`);
+                $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space5">Genero</span>${jogo.genre}<br>`);
+                $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space6">Modo de jogo</span>${jogo.gamemode}<br>`);
+                $("#jogoSolo").append(`<br><br><br><span class="font-weight-bold">Capa(Imagem):</span>`);
+            };
+
+            // When the user clicks on <span> (x), close the modal
+            function closeModal2() {
+                modal2.style.display = "none";
+            };
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target === modal2) {
+                    modal2.style.display = "none";
+                }
+            };
+        </script>
+
         <div class="row">
             <div class="col-sm-12">
                 <table id="grid-jogos" class="table table-striped">
@@ -174,6 +236,7 @@
                             <th scope="col">Nome</th>
                             <th scope="col" hidden>Release</th>
                             <th scope="col" hidden>Developer</th>
+                            <th scope="col" hidden>Platform</th>
                             <th scope="col">Genre</th>
                             <th scope="col" hidden>Gamemode</th>
                             <th scope="col">Cover</th>

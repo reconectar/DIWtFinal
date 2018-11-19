@@ -81,7 +81,7 @@ function exibeJogos() {
     // Popula a tabela com os registros do banco de dados
     for (i = 0; i < dbj.data.length; i++) {
         let jogo = dbj.data[i];
-        $("#table-jogos").append(`<tr><td scope="row" hidden>${jogo.id}</td><td>${jogo.nome}</td><td hidden>${jogo.release}</td><td hidden>${jogo.developer}</td><td hidden>${jogo.platform}</td><td>${jogo.genre}</td><td hidden>${jogo.gamemode}</td><td><img src="${jogo.cover}"></td><td><a href="#" onclick="openModal2()">Visualizar</a> | <a href="#" onclick="openModal()">Alterar</a> | <a onclick="deleteJogo(${jogo.id})" value="Excluir" href="#" id="btnDelete">Excluir</a></td></tr>`);
+        $("#table-jogos").append(`<tr><td scope="row" hidden>${jogo.id}</td><td>${jogo.nome}</td><td hidden>${jogo.release}</td><td hidden>${jogo.developer}</td><td hidden>${jogo.platform}</td><td>${jogo.genre}</td><td hidden>${jogo.gamemode}</td><td><img src="${jogo.cover}"></td><td><a href="#" onclick="openModal2(${jogo.id})">Visualizar</a> | <a href="#" onclick="openModal()">Alterar</a> | <a onclick="deleteJogo(${jogo.id})" value="Excluir" href="#" id="btnDelete">Excluir</a></td></tr>`);
     }
 }
 
@@ -163,27 +163,12 @@ function init() {
         closeModal();
     });
 
-    /*// Intercepta o click do botão Excluir
-    $("#btnDelete").click(function () {
-        let campoId = $("#inputId").val();
-        if (campoId == "") {
-            displayMessage("Selecione um jogo a ser excluído.");
-            return;
-        }
-        deleteJogo(parseInt(campoId));
-
-        // Reexibe os jogos
-        exibeJogos();
-
-        // Limpa o formulario
-        $("#form-jogo")[0].reset();
-    });*/
-
     // Intercepta o click do botão limpar formulário
     $("#btnClear").click(function () {
         $("#form-jogo")[0].reset();
     });
 
+    //Intercepta o botao que abre o modal
     $("#openBtn").click(function () {
         $("#form-jogo")[0].reset();
         showBtnInsert();
