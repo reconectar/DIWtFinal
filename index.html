@@ -203,7 +203,12 @@
                 console.log("id =", id);
                 console.log("idInt =", idInt);
                 // Popula o modal com os registros do banco de dados
-                let jogo = dbj.data[idInt];
+                //let jogo = dbj.data[idInt];
+
+                
+                for (i = 0; i < dbj.data.length; i++) {
+                let jogo = dbj.data[i];
+                if(jogo.id == id){
                 $("#jogoSolo").append(`<img src="${jogo.cover}">`);
                 $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space1">Nome</span>${jogo.nome}<br>`);
                 $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space2">Data de lançamento</span>${jogo.release}<br>`);
@@ -212,6 +217,9 @@
                 $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space5">Genero</span>${jogo.genre}<br>`);
                 $("#jogoSolo").append(`<br><span class="font-weight-bold tab-space6">Modo de jogo</span>${jogo.gamemode}<br>`);
                 $("#jogoSolo").append(`<br><br><br><span class="font-weight-bold">Capa(Imagem):</span>`);
+                }
+                }
+                
             };
 
             // When the user clicks on <span> (x), close the modal
