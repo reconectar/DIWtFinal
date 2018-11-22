@@ -200,7 +200,7 @@ function init() {
         $("#inputPlatform").val(linhaJogo.childNodes[4].firstChild.nodeValue);
         $("#inputGenre").val(linhaJogo.childNodes[5].firstChild.nodeValue);
         $("#inputGamemode").val(linhaJogo.childNodes[6].firstChild.nodeValue);
-        $("#inputCover").val(linhaJogo.childNodes[7].firstChild.nodeValue);
+        $("#inputCover").val(linhaJogo.childNodes[7].firstChild.getAttribute('src'));
         hideBtnInsert();
         showBtnUpdate();
     });
